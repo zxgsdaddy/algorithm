@@ -2,9 +2,10 @@
 # -*- coding: utf-8 -*-
 # __author__ = "Damon"
 # Date: 2019/8/2
-import random
+from cal_exc_time import *
 
 
+@cal_exc_time_with_list(50)
 def quick_sort(li):
     random_index = random.randint(0, len(li) - 1)
     li[0], li[random_index] = li[random_index], li[0]
@@ -29,12 +30,3 @@ def homing_one(li, left, right):
         li[right] = li[left]
     li[left] = val
     return left
-
-
-list_disorder = list(range(20))
-list_disorder.append(random.randint(0, 19))
-list_disorder.append(random.randint(0, 19))
-list_disorder.append(random.randint(0, 19))
-random.shuffle(list_disorder)
-quick_sort(list_disorder)
-print(list_disorder)

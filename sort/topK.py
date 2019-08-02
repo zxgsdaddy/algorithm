@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # __author__ = "Damon"
 # Date: 2019/8/2
-import random
+from cal_exc_time import *
 
 
 # 小根堆
@@ -22,6 +22,7 @@ def sift(li, low, high):
     li[i] = tmp
 
 
+@cal_exc_time
 def topk(li, k):
     top = li[:k]
     for i in range((k - 2) // 2, -1, -1):
@@ -36,10 +37,5 @@ def topk(li, k):
     return top
 
 
-list_disorder = list(range(20))
-list_disorder.append(random.randint(0, 19))
-list_disorder.append(random.randint(0, 19))
-list_disorder.append(random.randint(0, 19))
-random.shuffle(list_disorder)
-print(list_disorder)
-print(topk(list_disorder, 8))
+_list = get_random_list(1000000)
+print(topk(_list, 15))
