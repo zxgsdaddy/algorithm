@@ -8,14 +8,14 @@ import random
 def quick_sort(li):
     random_index = random.randint(0, len(li) - 1)
     li[0], li[random_index] = li[random_index], li[0]
-    sort_handler(li, 0, len(li) - 1)
+    partition(li, 0, len(li) - 1)
 
 
-def sort_handler(li, left, right):
+def partition(li, left, right):
     if left < right:
         mid = homing_one(li, left, right)
-        sort_handler(li, left, mid - 1)
-        sort_handler(li, mid + 1, right)
+        partition(li, left, mid - 1)
+        partition(li, mid + 1, right)
 
 
 def homing_one(li, left, right):
