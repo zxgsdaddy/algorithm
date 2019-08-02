@@ -9,6 +9,12 @@ import random
 
 # 大根堆
 def sift(li, low, high):
+    '''
+    :param li:数组
+    :param low:根节点
+    :param high:最后一个元素位置
+    :return:
+    '''
     tmp = li[low]
     i = low
     j = i * 2 + 1
