@@ -3,6 +3,7 @@
 # __author__ = "Damon"
 # Date: 2019/8/2
 from cal_exc_time import cal_exc_time_with_list
+import random
 
 
 @cal_exc_time_with_list(50)
