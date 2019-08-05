@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # __author__ = "Damon"
 # Date: 2019/8/2
-import random
+from cal_exc_time import cal_exc_time, get_random_list
 
 
 def merge(li, low, mid, high):
@@ -20,19 +20,19 @@ def merge(li, low, mid, high):
     li[low:high + 1] = ltmp
 
 
-def merge_sort(li, low, high):
+def _merge_sort(li, low, high):
     if low < high:
         mid = (low + high) // 2
-        merge_sort(li, low, mid)
-        merge_sort(li, mid + 1, high)
+        _merge_sort(li, low, mid)
+        _merge_sort(li, mid + 1, high)
         merge(li, low, mid, high)
 
 
-list_disorder = list(range(20))
-list_disorder.append(random.randint(0, 19))
-list_disorder.append(random.randint(0, 19))
-list_disorder.append(random.randint(0, 19))
-random.shuffle(list_disorder)
-print(list_disorder)
-merge_sort(list_disorder, 0, len(list_disorder) - 1)
-print(list_disorder)
+@cal_exc_time
+def merge_sort(li):
+    _merge_sort(li, 0, len(li) - 1)
+
+
+_list = get_random_list(100)
+merge_sort(_list)
+print(_list)

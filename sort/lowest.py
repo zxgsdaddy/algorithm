@@ -2,9 +2,10 @@
 # -*- coding: utf-8 -*-
 # __author__ = "Damon"
 # Date: 2019/8/1
-import random
+from cal_exc_time import cal_exc_time_with_list
 
 
+@cal_exc_time_with_list(50)
 def bubble_sort(li):
     list_len = len(li)
     for i in range(list_len - 1):
@@ -17,6 +18,7 @@ def bubble_sort(li):
             break
 
 
+@cal_exc_time_with_list(50)
 def selection_sort(li):
     list_len = len(li)
     for i in range(1, list_len - 1):
@@ -27,6 +29,7 @@ def selection_sort(li):
         li[i - 1], li[min_index] = li[min_index], li[i - 1]
 
 
+@cal_exc_time_with_list(50)
 def insert_sort(li):
     for i in range(1, len(li)):
         j = i - 1
@@ -37,7 +40,6 @@ def insert_sort(li):
         li[j + 1] = val
 
 
-list_disorder = list(range(100))
-random.shuffle(list_disorder)
-insert_sort(list_disorder)
-print(list_disorder)
+bubble_sort()
+selection_sort()
+insert_sort()

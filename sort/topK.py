@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # __author__ = "Damon"
 # Date: 2019/8/2
-from cal_exc_time import *
+from cal_exc_time import cal_exc_time, get_random_list
 
 
 # 小根堆

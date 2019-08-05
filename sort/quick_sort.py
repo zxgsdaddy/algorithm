@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # __author__ = "Damon"
 # Date: 2019/8/2
-from cal_exc_time import *
+from cal_exc_time import cal_exc_time_with_list
 
 
 @cal_exc_time_with_list(50)
@@ -30,3 +30,6 @@ def homing_one(li, left, right):
         li[right] = li[left]
     li[left] = val
     return left
+
+
+quick_sort()

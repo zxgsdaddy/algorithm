@@ -4,7 +4,7 @@
 # Date: 2019/8/2
 # O(nlogn)
 
-import random
+from cal_exc_time import cal_exc_time_with_list
 
 
 # 大根堆
@@ -30,6 +30,7 @@ def sift(li, low, high):
     li[i] = tmp
 
 
+@cal_exc_time_with_list(50)
 def heap_sort(li):
     lens = len(li)
     for i in range((lens - 2) // 2, -1, -1):  # 子节点的父节点 (n-1)//2 逆序建堆
@@ -38,12 +39,3 @@ def heap_sort(li):
         high = lens - 1 - i
         li[0], li[high] = li[high], li[0]
         sift(li, 0, high - 1)
-
-
-list_disorder = list(range(20))
-list_disorder.append(random.randint(0, 19))
-list_disorder.append(random.randint(0, 19))
-list_disorder.append(random.randint(0, 19))
-random.shuffle(list_disorder)
-heap_sort(list_disorder)
-print(list_disorder)

@@ -28,13 +28,15 @@ def get_random_list(lens):
     return l_disorder
 
 
+# 脱裤子放屁， 只为写个装饰器传参的
 def cal_exc_time_with_list(lens):
     def get_list(func):
         _list = get_random_list(lens)
+        print("disorder", _list)
 
         def wrapper():
             start_time = time.time()
-            result = func(lens)
+            result = func(_list)
             print('currentFunc [%s] execution cost time : %s' % (func.__name__, time.time() - start_time))
             print(_list)
             return result
