@@ -18,14 +18,7 @@ def cal_exc_time(func):
 
 
 def get_random_list(lens):
-    l_disorder = list(range(int(lens)))
-    l_disorder.append(random.randint(0, lens - 1))
-    l_disorder.append(random.randint(0, lens - 1))
-    l_disorder.append(random.randint(0, lens - 1))
-    l_disorder.append(random.randint(0, lens - 1))
-    l_disorder.append(random.randint(0, lens - 1))
-    random.shuffle(l_disorder)
-    return l_disorder
+    return [random.randint(0, 1000) for _ in range(lens)]
 
 
 # 脱裤子放屁， 只为写个装饰器传参的
@@ -37,8 +30,8 @@ def cal_exc_time_with_list(lens):
         def wrapper():
             start_time = time.time()
             result = func(_list)
-            print('currentFunc [%s] execution cost time : %s' % (func.__name__, time.time() - start_time))
             print(_list)
+            print('currentFunc [%s] execution cost time : %s' % (func.__name__, time.time() - start_time))
             return result
 
         return wrapper
