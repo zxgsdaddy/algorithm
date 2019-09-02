@@ -61,8 +61,8 @@ class BST:
                 min_node = min_node.l_child
             min_val = min_node.data
             self.remove(min_val)
-            node.data = min_val
             # self.__remove_node_only_one_child(node, left_child=min_node.l_child)
+            node.data = min_val
 
     def query(self, node, val):
         if not node:
