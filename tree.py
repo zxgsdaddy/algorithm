@@ -13,6 +13,9 @@ class BiTreeNode:
         self.r_child = None
         self.parent = None
 
+    def __str__(self):
+        return "data:%s " % (self.data)
+
 
 # 遍历
 def pre_oder(root):
@@ -63,7 +66,6 @@ def atree():
     c.l_child = b
     c.r_child = d
     return e
-
 
 # root = atree()
 # lel_oder(root)
