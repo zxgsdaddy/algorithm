@@ -64,26 +64,29 @@ class BST:
             # self.__remove_node_only_one_child(node, left_child=min_node.l_child)
             node.data = min_val
 
-    def query(self, node, val):
+    def query(self, node, val, count=0):
+        count += 1;
         if not node:
             return None
         elif node.data == val:
+            print("查找了 %s 次" % count)
             return node
         elif val < node.data:
-            return self.query(node.l_child, val)
+            return self.query(node.l_child, val, count)
         elif node.data < val:
-            return self.query(node.r_child, val)
+            return self.query(node.r_child, val, count)
 
 
-# li = get_random_list(15)
-li = [0, 6, 3, 2, 1, 5, 4]
-bi_tree = BST()
-for val in li:
-    bi_tree.insert(bi_tree.root, val)
-in_oder(bi_tree.root)
-print("")
-bi_tree.remove(3)
-bi_tree.remove(0)
+def test():
+    # li = get_random_list(15)
+    li = [0, 6, 3, 2, 1, 5, 4]
+    bi_tree = BST()
+    for val in li:
+        bi_tree.insert(bi_tree.root, val)
+    in_oder(bi_tree.root)
+    print("")
+    bi_tree.remove(3)
+    bi_tree.remove(0)
 
-in_oder(bi_tree.root)
-# print(bi_tree.query(bi_tree.root, 6))
+    in_oder(bi_tree.root)
+    # print(bi_tree.query(bi_tree.root, 6))
